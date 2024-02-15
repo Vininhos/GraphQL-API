@@ -5,14 +5,9 @@ using GraphQL.Server.Ui.Voyager;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var _configuration = builder.Configuration;
+builder.Services.AddPooledDbContextFactory<AppDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("CommandConStr")));
 
-builder.Services.AddPooledDbContextFactory<AppDbContext>(opt => opt.UseSqlServer(_configuration.GetConnectionString("CommandConStr")));
-
-if (builder.Environment.IsDevelopment())
-  builder.Services.AddGraphQLServer().AddQueryType<Query>().ModifyRequestOptions(opt => opt.IncludeExceptionDetails = true);
-else
-  builder.Services.AddGraphQLServer().AddQueryType<Query>();
+builder.Services.AddGraphQLServer().AddQueryType<Query>().AddProjections().ModifyRequestOptions(opt => opt.IncludeExceptionDetails = builder.Environment.IsDevelopment());
 
 var app = builder.Build();
 
