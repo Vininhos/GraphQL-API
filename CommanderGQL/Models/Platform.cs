@@ -1,6 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace CommanderGQL.Models;
+
+[GraphQLDescription("Represents any kind of software or services that has a command line interface (CLI).")]
 public class Platform
 {
     [Key]
@@ -9,6 +11,7 @@ public class Platform
     [Required]
     public string Name { get; set; }
 
+    [GraphQLDescription("Represents a valid license for the platform.")]
     public string? LicenseKey { get; set; }
 
     public ICollection<Command> Commands { get; set; } = new List<Command>();
