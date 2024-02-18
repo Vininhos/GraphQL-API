@@ -13,15 +13,19 @@ builder.Services
 .AddGraphQLServer()
 .AddQueryType<Query>()
 .AddMutationType<Mutation>()
+.AddSubscriptionType<Subscription>()
 .AddType<PlatformType>()
 .AddType<CommandType>()
 .AddFiltering()
 .AddSorting()
+.AddInMemorySubscriptions()
 .ModifyRequestOptions(opt => opt.IncludeExceptionDetails = builder.Environment.IsDevelopment());
 
 var app = builder.Build();
 
 app.UseRouting();
+
+app.UseWebSockets();
 
 app.UseEndpoints(endpoints =>
 {
