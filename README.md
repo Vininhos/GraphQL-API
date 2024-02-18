@@ -58,6 +58,6 @@ You can run the project cloning it and then using Docker and Docker Compose.
    }
    ```
 
-Inside **Bruno Requests** folder, there's some queries builded with [Bruno]([GitHub - usebruno/bruno: Opensource IDE For Exploring and Testing Api&#39;s (lightweight alternative to postman/insomnia)](https://github.com/usebruno/bruno)). You can use this tool to test even more the GraphQL API.
+Inside **Bruno Requests** folder, there's some queries builded with [Bruno](https://github.com/usebruno/bruno). You can use this tool to test even more the GraphQL API.
 
 
