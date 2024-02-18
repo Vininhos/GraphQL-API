@@ -14,6 +14,8 @@ builder.Services
 .AddQueryType<Query>()
 .AddType<PlatformType>()
 .AddType<CommandType>()
+.AddFiltering()
+.AddSorting()
 .ModifyRequestOptions(opt => opt.IncludeExceptionDetails = builder.Environment.IsDevelopment());
 
 var app = builder.Build();

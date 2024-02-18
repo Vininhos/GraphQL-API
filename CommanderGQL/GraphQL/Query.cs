@@ -6,6 +6,8 @@ namespace CommanderGQL.GraphQL;
 public class Query
 {
     [UseDbContext(typeof(AppDbContext))]
+    [UseFiltering]
+    [UseSorting]
     public IQueryable<Platform> GetPlatform([ScopedService] AppDbContext context)
     {
         var value = context.Platforms;
@@ -13,6 +15,8 @@ public class Query
     }
 
     [UseDbContext(typeof(AppDbContext))]
+    [UseFiltering]
+    [UseSorting]
     public IQueryable<Command> GetCommand([ScopedService] AppDbContext context)
     {
         var value = context.Commands;
