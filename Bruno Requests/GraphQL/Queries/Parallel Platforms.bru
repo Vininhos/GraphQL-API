@@ -1,0 +1,28 @@
+meta {
+  name: Parallel Platforms
+  type: graphql
+  seq: 1
+}
+
+post {
+  url: http://localhost:5267/graphql
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  query {
+    a: platform {
+      id
+      name
+    }
+      b: platform {
+      id
+      name
+    }
+      c: platform {
+      id
+      name
+    }
+  }
+}

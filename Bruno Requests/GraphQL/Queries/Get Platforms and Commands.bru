@@ -1,0 +1,25 @@
+meta {
+  name: Get Platforms and Commands
+  type: graphql
+  seq: 4
+}
+
+post {
+  url: http://localhost:5267/graphql
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  query {
+    platform {
+      id
+      name
+      commands {
+        id
+        howTo
+        commandLine
+      }
+    }
+  }
+}

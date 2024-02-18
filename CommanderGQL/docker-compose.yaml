@@ -8,4 +8,10 @@ services:
       SA_PASSWORD: "p@ssw0rd"
       MSSQL_PID: "Express"
     ports:
-     - "1433:1433"
+      - "1433:1433"
+  graphqlapi:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - "8080:8080"

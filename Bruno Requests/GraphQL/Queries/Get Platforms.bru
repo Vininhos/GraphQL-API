@@ -1,0 +1,20 @@
+meta {
+  name: Get Platforms
+  type: graphql
+  seq: 2
+}
+
+post {
+  url: http://localhost:5267/graphql
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  query {
+    platform {
+      id
+      name
+    }
+  }
+}

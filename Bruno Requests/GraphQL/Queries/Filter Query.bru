@@ -1,0 +1,25 @@
+meta {
+  name: Filter Query
+  type: graphql
+  seq: 5
+}
+
+post {
+  url: http://localhost:5267/graphql
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  query {
+    command(where: {platformId: {eq: 1}}) {
+      id
+      platform {
+        id
+        name
+      }
+      commandLine
+      howTo
+    }
+  }
+}

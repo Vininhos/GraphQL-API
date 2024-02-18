@@ -1,0 +1,31 @@
+meta {
+  name: AddCommand
+  type: graphql
+  seq: 2
+}
+
+post {
+  url: http://localhost:5267/graphql
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  mutation {
+    addCommand(input: {
+      howTo: "Run command as a super user"
+      commandLine: "sudo"
+      platformId: 4
+    })
+    {
+      command {
+        id
+        howTo
+        commandLine
+        platform {
+          name
+        }
+      }
+    }
+  }
+}

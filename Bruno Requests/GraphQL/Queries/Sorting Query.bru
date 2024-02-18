@@ -1,0 +1,20 @@
+meta {
+  name: Sorting Query
+  type: graphql
+  seq: 6
+}
+
+post {
+  url: http://localhost:5267/graphql
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  query {
+    platform(order: {name: ASC}) {
+      id
+      name
+    }
+  }
+}
