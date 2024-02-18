@@ -28,7 +28,7 @@ You can run the project cloning it and then using Docker and Docker Compose.
 
 5. With BananaCakePop open, click on **Create Document**.
    
-   ![Screenshot from 2024-02-18 10-38-49.png](/home/viniciusrw/Pictures/Screenshots/Screenshot%20from%202024-02-18%2010-38-49.png)
+   ![Screenshot from 2024-02-18 10-38-49](https://github.com/Vininhos/GraphQL-API/assets/41298947/10d217c0-f732-4838-8c7b-4d40729e0c6b)
 
 6. On **Operations**, write some GraphQL queries. Example: Add a Platform named Ubuntu.
    
